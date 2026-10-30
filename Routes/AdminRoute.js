@@ -1,4 +1,5 @@
 const express = require("express");
+const { exportPrescriptions } = require("../Controllers/PrescriptionExportController");
 const router = express.Router();
 
 const multer = require("multer");
@@ -265,6 +266,7 @@ router.delete('/deleteMatchSchedule', deleteMatchSchedule);
 router.get("/monthly-brand-summary",getMonthlyBrandSummary);
 
 router.get("/prescription-stats", getPrescriptionStats);
+router.get("/export-prescriptions/:adminId", exportPrescriptions);
 
 router.get("/brand-stats", getBrandStats);
 
